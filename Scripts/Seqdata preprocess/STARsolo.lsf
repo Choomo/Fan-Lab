@@ -1,0 +1,10 @@
+#!/bin/bash
+#BSUB -J STAR
+#BSUB -n 10
+cd /share/home/zhuxm/liaochh/data/scRNA_seq_retinal_organoid/GSE119343/clean_data/ ;
+STAR   --genomeDir /share/home/zhuxm/liaochh/data/STAR_genome_index/ \
+	--runThreadN 20 \
+	--soloType SmartSeq --readFilesManifest /share/home/zhuxm/liaochh/data/scRNA_seq_retinal_organoid/GSE119343/clean_data/maniout.csv  \
+	--soloUMIdedup NoDedup \
+	--readFilesCommand zcat \
+	--soloStrand Unstranded > STAR.log
