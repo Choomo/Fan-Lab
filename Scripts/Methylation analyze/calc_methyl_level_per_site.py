@@ -14,7 +14,7 @@ with open(output_filename, "w") as wfile:
             sum = 0
             for i in methyl_events.split(","):
                 sum += int(i)
-            if sum <= 4: #过滤掉Coverage小于5的甲基化位点
+            if sum*2 <= 5: #过滤掉Coverage小于5的甲基化位点
                 continue
             else:
                 events = methyl_events.split(",")
