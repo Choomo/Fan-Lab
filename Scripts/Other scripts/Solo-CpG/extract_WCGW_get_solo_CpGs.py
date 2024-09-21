@@ -1,5 +1,10 @@
 # Input bed file with fasta squences and output solo CpG sites in bed file form
-# Usage python get_solo_CpG.py input_bed_file output_file_prefix
+# Usage python extract_WCGW_get_solo_CpGs.py input_bed_file_with_fasta output_file_prefix
+# Input: bed file with fasta squences at the end of each line column1 (chr), column2 (CG_start), column3 (fasta_start), column4 (strand), column5 (fasta)
+# Output: 1. All CpG sites in bed file form
+#         2. Solo CpG sites in bed file form
+#         3. Solo CpG sites in WCGW, WCGS, SCGW, SCGS in bed file form
+
 
 import sys
 import re

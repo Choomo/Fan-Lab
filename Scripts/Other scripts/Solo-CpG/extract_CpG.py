@@ -5,7 +5,6 @@ import linecache
 
 # 获取命令行参数
 fasta_file = sys.argv[1]
-linewidth = int(sys.argv[2])
 
 # 定义一个函数，用于统计文件行数
 def wc_count(file_name):
@@ -46,7 +45,7 @@ for n in range(1,row_numbers):
                 print(f"{chr_name}\t{start}\t{end}\t+")
         # 如果当前行以"C"结尾，且下一行以"G"开头，则输出染色体名称、起始位置和结束位置
         if line[-1] == "C" and line_2[0] == "G":
-            start = linewidth + count -1
+            start = 49 + count
             end = start + 2
             print(f"{chr_name}\t{start}\t{end}\t+")
         # 计数器加50
@@ -62,7 +61,7 @@ for n in range(1,row_numbers):
                 print(f"{chr_name}\t{start}\t{end}\t-")
         # 如果当前行以"C"结尾，且下一行以"G"开头，则输出染色体名称、起始位置和结束位置
         if line[-1] == "G" and line_2[0] == "C":
-            start = linewidth + count -1
+            start = 49 + count
             end = start + 2
             print(f"{chr_name}\t{start}\t{end}\t-")
-        count += linewidth
+        count += 50
